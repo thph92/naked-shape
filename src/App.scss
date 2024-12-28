@@ -1,0 +1,77 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  25% {
+    opacity: 0.25;
+    transform: translate(-50%, -53%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -52%);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translate(-50%, -51%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Styling for the fade-in text
+.fade-in-text {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--palette-primary);
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 5s ease-in-out forwards;
+}
+
+//nav
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  padding: var(--spacing-2);
+  display: flex;
+  justify-content: center;
+  box-shadow: var(--elevation);
+
+  .navbar-menu {
+    display: flex;
+    gap: var(--spacing-4);
+
+    .navbar-button {
+      background: none;
+      border: none;
+      color: var(--foreground-color);
+      font-size: 1rem;
+      font-family: var(--font-family);
+      cursor: pointer;
+      transition: color 0.3s;
+      box-shadow: none;
+
+      &:hover {
+        color: var(--palette-primary-accent);
+      }
+
+      &:active {
+        color: var(--palette-primary-accent);
+      }
+
+      &:focus {
+        color: var(--palette-primary);
+      }
+    }
+  }
+}

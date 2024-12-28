@@ -1,0 +1,41 @@
+{
+  "author": "Thanh Tieu Pham",
+  "name": "naked-shape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.tsx",
+  "scripts": {
+    "start": "bun run dev",
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "rsdoctor": "RSDOCTOR=true npm run build",
+    "preview": "rsbuild preview",
+    "\n---------- Biome --------------------------------------------------------------------------": "",
+    "lint:biome": "biome lint src",
+    "lint:biome:fix": "biome lint src --fix"
+  },
+  "dependencies": {
+    "@rsbuild/plugin-sass": "^1.1.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
+    "run-all": "^1.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@biomejs/js-api": "^0.7.1",
+    "@biomejs/wasm-nodejs": "^1.9.4",
+    "@rsbuild/core": "^1.1.13",
+    "@rsbuild/plugin-assets-retry": "^1.0.7",
+    "@rsbuild/plugin-image-compress": "^1.1.0",
+    "@rsbuild/plugin-react": "^1.1.0",
+    "@rsbuild/plugin-styled-components": "^1.1.0",
+    "@rsbuild/plugin-svgr": "^1.0.6",
+    "@rsbuild/plugin-type-check": "^1.2.0",
+    "@rsdoctor/rspack-plugin": "^0.4.12",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2"
+  }
+}

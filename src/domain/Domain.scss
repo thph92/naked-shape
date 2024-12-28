@@ -1,0 +1,5 @@
+.section {
+    padding: calc(var(--spacing-4) * 3) var(--spacing-4);
+    min-height: 100vh;
+    font-family: var(--font-family);
+}

@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"strict": true,
+		"baseUrl": "./src",
+		"paths": {
+			"@public/*": ["../public/*"],
+			"@components/*": ["./components/*"],
+			"@hooks/*": ["./hooks/*"],
+			"@utils/*": ["./utils/*"]
+		}
+	},
+	"exclude": []
+}

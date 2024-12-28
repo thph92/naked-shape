@@ -1,0 +1,130 @@
+:root {
+	--font-family: "Montserrat", Arial, sans-serif; /* Modern font */
+	--radius: 16px; /* Soft rounded corners */
+	--elevation: rgba(140, 140, 140, 0.2) 0px 4px 6px, rgba(140, 140, 140, 0.3)
+		0px 1px 3px; /* Subtle shadow for light mode */
+	--spacing: 8px;
+	--spacing-1: 8px;
+	--spacing-2: calc(var(--spacing) * 2);
+	--spacing-4: calc(var(--spacing) * 4);
+
+	/* Default color palette (Light Mode) */
+	--palette-primary: #e09baa; /* Soft pink for buttons */
+	--palette-primary-accent: #c47b89; /* Slightly darker pink for hover effect */
+	--palette-primary-contrast: #ffffff; /* White text on buttons */
+	--palette-surface: #f4f4f4; /* Medium gray for input backgrounds and surfaces */
+	--palette-secondary: #e3f3fa; /* Soft blue for accents */
+	--palette-highlight: #ffd3a5; /* Warm LED-style glow */
+
+	--foreground-color: #333333; /* White text for dark mode */
+	--secondary-text-color: #a3a3a3; /* Light gray for secondary text */
+	--placeholder-text-color: #6f6f6f; /* Medium gray for placeholders */
+
+	--background-color: #ffffff; /* White background */
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		/* Dark mode color palette */
+		--palette-primary: #f8e3e8; /* Soft pink for buttons */
+		--palette-primary-accent: #e8c2ce; /* Slightly darker pink for hover */
+		--palette-primary-contrast: #ffffff; /* White text on buttons */
+		--palette-surface: #3a3a3a; /* Light gray for input backgrounds and surfaces */
+		--palette-secondary: #e3f3fa; /* Soft blue for accents */
+		--palette-highlight: #ffd3a5; /* Warm pastel glow */
+
+		--foreground-color: #333333; /* Dark charcoal for text */
+		--secondary-text-color: #6f6f6f; /* Medium gray for secondary text */
+		--placeholder-text-color: #a3a3a3; /* Light gray for placeholders */
+
+		--background-color: #121212; /* Very dark background */
+	}
+}
+
+/* General Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-family);
+	color: var(--foreground-color);
+	background-color: var(--background-color);
+}
+
+button {
+	background-color: var(--palette-primary);
+	color: var(--palette-primary-contrast);
+	border: none;
+	border-radius: var(--radius);
+	padding: var(--spacing-2);
+	box-shadow: var(--elevation);
+	transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+	cursor: pointer;
+	min-width: 100px;
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+button:hover {
+	background-color: var(--palette-primary-accent);
+	transform: scale(1.02);
+}
+
+button:active {
+	background-color: #a34555;
+	box-shadow: none;
+	transform: scale(0.98);
+}
+
+input,
+textarea {
+	border: 1px solid var(--palette-surface);
+	border-radius: var(--radius);
+	padding: var(--spacing);
+	color: var(--foreground-color);
+	background-color: var(--palette-surface);
+	font-family: var(--font-family);
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: var(--placeholder-text-color);
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--palette-primary); /* Highlighted border on focus */
+	background-color: #ffffff; /* White background on focus in light mode */
+}
+
+.card {
+	background-color: var(--palette-surface);
+	border-radius: var(--radius);
+	box-shadow: var(--elevation);
+	padding: var(--spacing-4);
+	color: var(--foreground-color);
+}
+
+.link {
+	color: var(--palette-secondary);
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.link:hover {
+	color: var(--palette-highlight);
+}
+
+.link:active {
+	color: var(--palette-highlight);
+}
+
+.video {
+	width: 100vw; /* Full width of the viewport */
+	height: auto; /* Adjust height proportionally */
+	max-width: 100%; /* Ensure it doesn’t overflow */
+}
