@@ -8,14 +8,18 @@
 !public/**/*
 !src/
 !src/**/*
+!.vscode/
+!.vscode/**/*
 
 # Except these files
 !.editorconfig
 !.gitignore
 !bun.lockb
-!eslint.config.js
 !index.html
 !package.json
 !README.md
 !tsconfig.json
 !biome.json
+!rsbuild.config.ts
+!custom.d.ts
+!.nvmrc
