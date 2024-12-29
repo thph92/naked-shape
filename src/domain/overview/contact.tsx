@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import './Contact.scss';
-import '../Domain.scss';
+import './contact.scss';
+import '../domain.scss';
 
 export const Contact = forwardRef<any, any>((_, ref) => {
 	return (

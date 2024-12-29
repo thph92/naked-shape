@@ -1,11 +1,13 @@
+import { BookingPage } from 'domain/booking-page/booking-page';
+import { NavBar } from 'domain/nav-bar/nav-bar';
+import { Home } from 'domain/overview/home';
 import { RefObject, useRef, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { About } from './domain/overview/about';
 import { Contact } from './domain/overview/contact';
 import { Services } from './domain/overview/services';
-import { Home } from 'domain/overview/home';
-import { NavBar } from 'domain/nav-bar/nav-bar';
 
-export type SectionKeys = 'home' | 'about' | 'services' | 'contact';
+export type SectionKeys = 'home' | 'about' | 'services' | 'contact' | 'book';
 
 export const App = () => {
 	const [activeNav, setActiveNav] = useState<SectionKeys>('home');
@@ -15,6 +17,7 @@ export const App = () => {
 		about: useRef<HTMLDivElement | null>(null),
 		services: useRef<HTMLDivElement | null>(null),
 		contact: useRef<HTMLDivElement | null>(null),
+		book: useRef<HTMLDivElement | null>(null),
 	};
 
 	const scrollToSection = (section: SectionKeys) => {
@@ -27,12 +30,26 @@ export const App = () => {
 
 	return (
 		<>
-			<NavBar scrollToSection={scrollToSection} activeNav={activeNav} />
+			<NavBar
+				scrollToSection={scrollToSection}
+				activeNav={activeNav}
+				setActiveNav={setActiveNav}
+			/>
 
-			<Home ref={sectionRefs.home} />
-			<About ref={sectionRefs.about} />
-			<Services ref={sectionRefs.services} />
-			<Contact ref={sectionRefs.contact} />
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<>
+							<Home ref={sectionRefs.home} />
+							<About ref={sectionRefs.about} />
+							<Services ref={sectionRefs.services} />
+							<Contact ref={sectionRefs.contact} />
+						</>
+					}
+				/>
+				<Route path="/booking" element={<BookingPage />} />
+			</Routes>
 		</>
 	);
 };
