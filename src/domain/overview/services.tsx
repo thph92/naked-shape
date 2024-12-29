@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import './Services.scss';
-import '../Domain.scss';
+import './services.scss';
+import '../domain.scss';
 
 export const Services = forwardRef<any, any>((_, ref) => {
 	return (

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import './About.scss';
-import '../Domain.scss';
+import './about.scss';
+import '../domain.scss';
 
 export const About = forwardRef<any, any>((_, ref) => {
 	return (
